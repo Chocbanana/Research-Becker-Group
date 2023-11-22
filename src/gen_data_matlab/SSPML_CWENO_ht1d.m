@@ -1,13 +1,16 @@
 % VP 1d
 
+
 clear all
+%%% Bhavana Jonnalagadda (BJ)
+%% Variables to change
 a = []; % coefficient
 prob = 2; % problem
 
-order = 5;
+order = 5; % 5, 9
 T = 40;
 
-Nx = 128;
+Nx = 64;
 Nv = 2*Nx;
 
 % for truncation
@@ -17,7 +20,7 @@ opts.rel_eps = 1e-5;
 problem = [];
 if prob==1
     problem = 'weak1d';
-    a = 0.015
+    a = 0.015;
 elseif prob ==2
     problem = 'strong1d';
     a = 0.5;
@@ -95,7 +98,7 @@ htj =  htensor({v});
 hte =  htensor({v.^2});
 
 
-%landau damping
+%% landau damping
 if prob == 1 || prob==2
     f = htensor({1/sqrt(2*pi)*(1+ a*cos(kx*x)), exp(-v.^2/2)}); % create a htd tensor from CP format
 elseif prob ==3
@@ -139,7 +142,7 @@ list{1} = f;
 
 for i=2:3
     
-    % rk2 stage 1
+    %% rk2 stage 1
     
     ft = f;
     
@@ -234,7 +237,7 @@ for i=2:3
     
     f = htensor.truncate_sum(fsum, opts);
     
-    % rk stage 2
+    %% rk stage 2
     
     rho = ttt(f, htrho, 2, 1);
     
@@ -498,8 +501,8 @@ e_elec = [[1:Nt-1]'*dt, ener_his];
 save(name3, 'e_elec');
 
 name4 = strcat(problem,'_WENO',num2str(order),'_mass','_',num2str(Nx),'_',num2str(Nv),'_',num2str(opts.rel_eps),'_',num2str(opts.max_rank),'_T',num2str(floor(T)),'.mat');
-e_elec = [[1:Nt-1]'*dt, mass_his];
-save(name4, 'e_elec');
+e_mass = [[1:Nt-1]'*dt, mass_his];
+save(name4, 'e_mass');
 
-disp(name1);
+% disp(name1);
 
