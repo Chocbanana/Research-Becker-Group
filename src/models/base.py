@@ -10,7 +10,7 @@ from torch import nn
 
 
 format_name = dict(
-    rank = ("r", lambda x: x),
+    rank = ("r", lambda x: str(x)),
     img_size = ("img", lambda x: x[0]),
     stem_layer_dims = ("sdim", lambda x: f"{len(x)}-{hashlib.shake_256(str(x).encode()).hexdigest(2)}"),
     fork_layer_dims = ("fdim", lambda x: f"{len(x)}-{hashlib.shake_256(str(x).encode()).hexdigest(2)}"),

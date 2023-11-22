@@ -1,3 +1,6 @@
 *.ipynb_checkpoints
 *.DS_Store
 *__pycache__
+*.jupyterlab-workspace
+data/output/*DANMF*.tar
+data/output/*DANMF*.pt

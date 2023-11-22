@@ -48,11 +48,9 @@ class Fork(BaseMF):
 
         # The last layer must be U: batch x m x r,  V: batch x r x n
         self.U.append(nn.Sequential(nn.Linear(fork_dims[-1], img_size[0] * rank),
-                                    nn.Unflatten(1, (img_size[0], rank)),
-                                    nn.Tanh()))
+                                    nn.Unflatten(1, (img_size[0], rank))))
         self.V.append(nn.Sequential(nn.Linear(fork_dims[-1], rank * img_size[1]),
-                                    nn.Unflatten(1, (rank, img_size[1])),
-                                    nn.Tanh()))
+                                    nn.Unflatten(1, (rank, img_size[1]))))
 
 
     def forward(self, x):
