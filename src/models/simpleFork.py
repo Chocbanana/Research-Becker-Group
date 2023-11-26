@@ -32,7 +32,7 @@ class Fork(BaseMF):
         self.stem_layer_dims = stem_layer_dims
         self.fork_layer_dims = fork_layer_dims
 
-        self.input = nn.Flatten(start_dim=1)
+        self.flatten = nn.Flatten(start_dim=1)
 
         self.seq = nn.Sequential(nn.Sequential(nn.Linear(np.prod(img_size), stem_layer_dims[0]), nn.Tanh()))
         for i, r in enumerate(stem_layer_dims[1:]):
@@ -54,7 +54,7 @@ class Fork(BaseMF):
 
 
     def forward(self, x):
-        x = self.input(x)
+        x = self.flatten(x)
         seq_output = self.seq(x)
 
         U = self.U(seq_output)

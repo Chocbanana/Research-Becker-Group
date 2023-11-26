@@ -15,6 +15,7 @@ format_name = dict(
     stem_layer_dims = ("sdim", lambda x: f"{len(x)}-{hashlib.shake_256(str(x).encode()).hexdigest(2)}"),
     fork_layer_dims = ("fdim", lambda x: f"{len(x)}-{hashlib.shake_256(str(x).encode()).hexdigest(2)}"),
     layer_dims = ("dim", lambda x: f"{len(x)}-{hashlib.shake_256(str(x).encode()).hexdigest(2)}")
+    conv_dims = ("cdim", lambda x: f"{len(x)}-{hashlib.shake_256(str(x).encode()).hexdigest(2)}")
 )
 
 class BaseMF(nn.Module):

@@ -1,0 +1,72 @@
+{
+  "Fork_r10_sdim2-3ebc_fdim2-37e7": {
+    "rank": 10,
+    "img_size": [
+      54,
+      96
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ]
+  },
+  "Fork_r10_sdim2-3ebc_fdim3-1276": {
+    "rank": 10,
+    "img_size": [
+      54,
+      96
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300,
+      400
+    ]
+  },
+  "Fork_r10_sdim3-1420_fdim2-37e7": {
+    "rank": 10,
+    "img_size": [
+      54,
+      96
+    ],
+    "stem_layer_dims": [
+      600,
+      400,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ]
+  },
+  "Fork_r10_sdim3-1420_fdim3-1276": {
+    "rank": 10,
+    "img_size": [
+      54,
+      96
+    ],
+    "stem_layer_dims": [
+      600,
+      400,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300,
+      400
+    ]
+  },
+  "run_params": {
+    "epochs": 20,
+    "checkpoint_at": 15,
+    "batch_pr": 200,
+    "subname": "ED_Bigger"
+  }
+}
