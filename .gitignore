@@ -2,5 +2,9 @@
 *.DS_Store
 *__pycache__
 *.jupyterlab-workspace
+
 data/output/*DANMF*.tar
 data/output/*DANMF*.pt
+data/gen_plasma_n128/mat_*/
+data/gen_plasma_n256/mat_*/
+data/gen_plasma_n64/mat_*/

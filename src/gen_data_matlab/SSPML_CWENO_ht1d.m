@@ -3,14 +3,18 @@
 
 clear all
 %%% Bhavana Jonnalagadda (BJ)
-%% Variables to change
+data_out_path = "..\..\data\gen_plasma_n256\mat_1\"; % PC Path
+% data_out_path = "../../data/gen_plasma_n64/mat_0/"; % Mac/Linux Path
+
+% Variables to change
 a = []; % coefficient
 prob = 2; % problem
 
 order = 5; % 5, 9
 T = 40;
 
-Nx = 64;
+% try Nx = 128, 256, etc
+Nx = 256; % Dims
 Nv = 2*Nx;
 
 % for truncation
@@ -405,8 +409,8 @@ for i = 4:Nt
     
     
 
-    
-    
+
+    % f is updated per timestep here
     f = htensor.truncate_sum(fsum, opts);
     
     list{1} = list{2};
@@ -414,6 +418,17 @@ for i = 4:Nt
     list{3} = f;
     
     rk = rank(f);
+
+    % NOTE
+    % BJ: Save Values
+    full_f = full(f);
+    fnorm = norm(full_f, "fro")
+    writematrix(full_f, data_out_path + "f_" + (i-4) + ".csv");
+    % writematrix(f.U{2}, data_out_path + "U_" + (i-4) + ".csv");
+    % writematrix(f.U{3}, data_out_path + "V_" + (i-4) + ".csv");
+    % writematrix(f.B{1}, data_out_path + "S_" + (i-4) + ".csv");
+
+
 %     
 %     contourf(xx,vv,full(f)');
 %     title(['t=', num2str(i*dt)]);
@@ -477,7 +492,7 @@ xlabel('x');
 ylabel('v');
 title(['t=',num2str(T)]);
 set(gcf,'renderer','opengl');
-saveas(gcf,strcat(problem,'_WENO_t',num2str(T),'_',num2str(Nx),'_',num2str(Nv),'_contour_',num2str(opts.max_rank),'.eps'), 'epsc2');
+% saveas(gcf,strcat(problem,'_WENO_t',num2str(T),'_',num2str(Nx),'_',num2str(Nv),'_contour_',num2str(opts.max_rank),'.eps'), 'epsc2');
 filename = strcat(problem,'_WENO_t',num2str(T),'_',num2str(Nx),'_',num2str(Nv),'_contour_',num2str(opts.max_rank),'.eps');
 %export_fig(filename, '-eps');
 
@@ -490,19 +505,22 @@ figure;
 plot((1:Nt-1)'*dt, e_rank);
 name1 = strcat(problem,'_WENO',num2str(order),'_rank','_',num2str(Nx),'_',num2str(Nv),'_',num2str(opts.rel_eps),'_',num2str(opts.max_rank),'_T',num2str(floor(T)),'.mat');
 e_rank = [[1:Nt-1]'*dt, e_rank];
-save(name1, 'e_rank');
+% save(name1, 'e_rank');
 
 name2 = strcat(problem,'_WENO',num2str(order),'_elec','_',num2str(Nx),'_',num2str(Nv),'_',num2str(opts.rel_eps),'_',num2str(opts.max_rank),'_T',num2str(floor(T)),'.mat');
 e_elec = [[1:Nt-1]'*dt, e_his];
-save(name2, 'e_elec');
+% save(name2, 'e_elec');
 
 name3 = strcat(problem,'_WENO',num2str(order),'_ener','_',num2str(Nx),'_',num2str(Nv),'_',num2str(opts.rel_eps),'_',num2str(opts.max_rank),'_T',num2str(floor(T)),'.mat');
 e_elec = [[1:Nt-1]'*dt, ener_his];
-save(name3, 'e_elec');
+% save(name3, 'e_elec');
 
 name4 = strcat(problem,'_WENO',num2str(order),'_mass','_',num2str(Nx),'_',num2str(Nv),'_',num2str(opts.rel_eps),'_',num2str(opts.max_rank),'_T',num2str(floor(T)),'.mat');
 e_mass = [[1:Nt-1]'*dt, mass_his];
-save(name4, 'e_mass');
+% save(name4, 'e_mass');
 
 % disp(name1);
 
+% tst = full(f)
+% tst2 = f.U{2} * f.B{1} * f.U{3}'
+% tst3 = norm(tst - tst2, "fro")

@@ -1,0 +1,12 @@
+jupyterlab
+nbconvert
+papermill
+torch
+torchvision
+pandas
+numpy
+matplotlib
+scipy
+plotly
+tensorboard
+onnx
