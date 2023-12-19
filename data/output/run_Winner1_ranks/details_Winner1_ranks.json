@@ -1,0 +1,423 @@
+{
+  "run_params": {
+    "epochs": 120,
+    "checkpoint_at": 40,
+    "batch_pr": 40,
+    "batch_size": 25,
+    "subname": "Winner1_ranks"
+  },
+  "Fork_r4_sdim2-3ebc_fdim2-37e7": {
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 4,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Linear layers that fork into two separate channels for U, V"
+  },
+  "ConvMF_r4_cdim2-c00f": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 4,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Conv layer(s) into Fork model"
+  },
+  "Fork_r5_sdim2-3ebc_fdim2-37e7": {
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 5,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Linear layers that fork into two separate channels for U, V"
+  },
+  "ConvMF_r5_cdim2-c00f": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 5,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Conv layer(s) into Fork model"
+  },
+  "Fork_sdim2-3ebc_fdim2-37e7": {
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 6,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Linear layers that fork into two separate channels for U, V"
+  },
+  "ConvMF_cdim2-c00f": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 6,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Conv layer(s) into Fork model"
+  },
+  "Fork_r7_sdim2-3ebc_fdim2-37e7": {
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 7,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Linear layers that fork into two separate channels for U, V"
+  },
+  "ConvMF_r7_cdim2-c00f": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 7,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Conv layer(s) into Fork model"
+  },
+  "Fork_r8_sdim2-3ebc_fdim2-37e7": {
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 8,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Linear layers that fork into two separate channels for U, V"
+  },
+  "ConvMF_r8_cdim2-c00f": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 8,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Conv layer(s) into Fork model"
+  },
+  "Fork_r9_sdim2-3ebc_fdim2-37e7": {
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 9,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Linear layers that fork into two separate channels for U, V"
+  },
+  "ConvMF_r9_cdim2-c00f": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 9,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Conv layer(s) into Fork model"
+  },
+  "Fork_r10_sdim2-3ebc_fdim2-37e7": {
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 10,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Linear layers that fork into two separate channels for U, V"
+  },
+  "ConvMF_r10_cdim2-c00f": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 10,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Conv layer(s) into Fork model"
+  },
+  "Fork_r11_sdim2-3ebc_fdim2-37e7": {
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 11,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Linear layers that fork into two separate channels for U, V"
+  },
+  "ConvMF_r11_cdim2-c00f": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 11,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Conv layer(s) into Fork model"
+  },
+  "Fork_r12_sdim2-3ebc_fdim2-37e7": {
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 12,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Linear layers that fork into two separate channels for U, V"
+  },
+  "ConvMF_r12_cdim2-c00f": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 12,
+    "img_size": [
+      54,
+      96
+    ],
+    "desc": "Conv layer(s) into Fork model"
+  }
+}
