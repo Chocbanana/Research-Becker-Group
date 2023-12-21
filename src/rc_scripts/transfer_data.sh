@@ -18,6 +18,8 @@ if [ ! -f "${DATA_PATH}/../${ZIPNAME}" ]; then
     # Zip folder recursively, update files if they exist, print progress dots
     # every 100MB
     zip -ru -qdgds 100m $ZIPNAME "$NAME"
+else
+    echo "${DATA_PATH}/../${ZIPNAME} already exists"
 fi
 
 # Copy over zipped file to target folder, if it doesn't exist
@@ -26,6 +28,8 @@ if [ ! -f "${TARGET_FOLDER}/${ZIPNAME}" ]; then
     echo "Unzipping ${NAME} into ${TARGET_FOLDER}"
     # Unzip files into target
     unzip -uq "${TARGET_FOLDER}/${ZIPNAME}" -d $TARGET_FOLDER
+else
+    echo "${TARGET_FOLDER}/${ZIPNAME} already exists"
 fi
 
 cd $CURR_DIR
