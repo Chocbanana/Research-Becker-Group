@@ -1,0 +1,101 @@
+{
+  "run_params": {
+    "epochs": 120,
+    "checkpoint_at": 40,
+    "batch_pr": 40,
+    "batch_size": 25,
+    "runname": "plasma_mf_test_1"
+  },
+  "Fork_img64_sdim2-3ebc_fdim2-37e7": {
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 6,
+    "img_size": [
+      64,
+      128
+    ],
+    "desc": "Linear layers that fork into two separate channels for U, V"
+  },
+  "ConvMF_img64_cdim2-c00f": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 6,
+    "img_size": [
+      64,
+      128
+    ],
+    "desc": "Conv layer(s) into Fork model"
+  },
+  "Fork_r12_img64_sdim2-3ebc_fdim2-37e7": {
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 12,
+    "img_size": [
+      64,
+      128
+    ],
+    "desc": "Linear layers that fork into two separate channels for U, V"
+  },
+  "ConvMF_r12_img64_cdim2-c00f": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 12,
+    "img_size": [
+      64,
+      128
+    ],
+    "desc": "Conv layer(s) into Fork model"
+  }
+}

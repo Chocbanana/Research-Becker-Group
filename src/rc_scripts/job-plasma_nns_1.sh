@@ -2,9 +2,10 @@
 
 #SBATCH --nodes=1
 #SBATCH --partition=aa100
-#SBATCH --gres=gpu:2
-#SBATCH --time=07:00:00
-#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --mem=0
+#SBATCH --time=04:00:00
+#SBATCH --ntasks=16
 #SBATCH --job-name=plasma_nns_1
 #SBATCH --output=../../output/plasma_nns_1.%j.out
 
@@ -31,7 +32,7 @@ conda activate nnenv
 
 cd $RUN_FOLDER
 # Use Papermill (python lib) to run notebooks, since we then get stdout
-papermill --autosave-cell-every=300 --log-output "${IPYNB_FILE}.ipynb" "${IPYNB_FILE}.out.ipynb"
+papermill --autosave-cell-every=300 --log-output "${IPYNB_FILE}.ipynb" "../../output/${IPYNB_FILE}.out.ipynb"
 
 
 

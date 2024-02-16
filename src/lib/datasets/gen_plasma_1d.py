@@ -10,6 +10,7 @@ class GenPlasma1DDataset(Dataset):
     def __init__(self,
                  mat_dirs: Sequence[str],
                  mats: Sequence[str] = ["f"],
+                 return_imname = False,
                  transform: Callable = None):
         """Loads matrices into tensors that are in the form:
         - Individual folders
@@ -24,6 +25,7 @@ class GenPlasma1DDataset(Dataset):
         self.mat_dirs = mat_dirs
         self.mat_names = mats
         self.transform = transform
+        self.return_imname = return_imname
 
         self._num_folders = len(mat_dirs)
         # Count the number of occurences of one type of matrix in each folder
@@ -47,5 +49,8 @@ class GenPlasma1DDataset(Dataset):
                      for m in mat_paths)
         if self.transform is not None:
             mats = tuple(self.transform(m) for m in mats)
+
+        if self.return_imname:
+            mats = mats + (f"{self.mat_dirs[folder_num]}/{self.mat_names[0]}_{mat_num}",)
 
         return mats[0] if len(mats) == 1 else mats
