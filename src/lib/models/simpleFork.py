@@ -11,7 +11,7 @@ class Fork(BaseMF):
     """Linear tanh layers that fork into two separate linear tanh channels for U, V
 
     Args:
-        stem_layer_dims (Tuple[], optional): Tuple of length > 0, for the seq layers before fork
+        stem_layer_dims (Tuple[], optional): Tuple of length > 0, for the seq layer sizes outdim before fork
         fork_layer_dims (Tuple[], optional): Tuple len >=0, last layer is always the rank dim
     """
     defaults = dict(rank = 6,
@@ -34,13 +34,16 @@ class Fork(BaseMF):
 
         self.flatten = nn.Flatten(start_dim=1)
 
+        # 1st hidden layer: flattened imgsize x 1st dim_0
         self.seq = nn.Sequential(nn.Sequential(nn.Linear(np.prod(img_size), stem_layer_dims[0]), nn.Tanh()))
+        # Other layers: dim_{n-1} x dim_{n}
         for i, r in enumerate(stem_layer_dims[1:]):
             self.seq = self.seq.append(nn.Sequential(nn.Linear(stem_layer_dims[i], r), nn.Tanh()))
 
         fork_dims = [stem_layer_dims[-1]] + fork_layer_dims
         self.U = nn.Sequential()
         self.V = nn.Sequential()
+
 
         for i, r in enumerate(fork_dims[1:]):
             self.U.append(nn.Sequential(nn.Linear(fork_dims[i], r), nn.Tanh()))

@@ -34,7 +34,7 @@ def train_model(model: BaseMF,
                 train_data: DataLoader,
                 validate_data: DataLoader,
                 output_run_dir: str,
-                machine: str = "RC",
+                machine: str,
                 epochs = 15,
                 checkpoint_at = -1,
                 load = True,
@@ -93,8 +93,8 @@ def train_model(model: BaseMF,
             running_time = default_timer() - start_time
 
             running_loss += loss.item()
-            # Print and save statistics
-            if i % batch_pr == batch_pr - 1:    # print every 200 mini-batches
+            # Print and save statistics, every batch_pr amt of data
+            if i % batch_pr == batch_pr - 1:
                 avg_loss = running_loss / batch_pr
                 loss_arr.append(avg_loss)
                 avg_time = running_time / batch_pr
