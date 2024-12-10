@@ -1,0 +1,307 @@
+@book{arpack,
+  title = {{{ARPACK Users}}' {{Guide}}},
+  author = {Lehoucq, R. B. and Sorensen, D. C. and Yang, C.},
+  year = {1998},
+  month = jan,
+  series = {Software, {{Environments}}, and {{Tools}}},
+  publisher = {{Society for Industrial and Applied Mathematics}},
+  doi = {10.1137/1.9780898719628},
+  urldate = {2024-11-27},
+  isbn = {978-0-89871-407-4},
+  keywords = {Arnoldi Methods,ARPACK,computational routines,eigenvalue problems}
+}
+
+@article{danmf,
+  title = {Deep Alternating Non-Negative Matrix Factorisation},
+  author = {Sun, Jianyong and Kong, Qingming and Xu, Zongben},
+  year = {2022},
+  month = sep,
+  journal = {Knowledge-Based Systems},
+  volume = {251},
+  pages = {109210},
+  issn = {0950-7051},
+  doi = {10.1016/j.knosys.2022.109210},
+  urldate = {2023-10-24},
+  abstract = {Non-negative matrix factorisation (NMF) is a promising data-mining technique for non-negative data. NMF achieves feature extraction by factorising the original data matrix into a basis matrix and coding matrix both with non-negative entries. Recently, multi-layer or deep NMF has been studied because of its ability to extract deep representative features which can help profoundly understand the original data. The existing deep NMF approaches are implemented by cascading the factorisation of the coding matrix at each layer. This paper proposes a novel scheme, in which the factorisations of the basis and coding matrices are alternated along layers. Based on this scheme, several deep NMF models to address various data scenarios are developed. Extensive experimental results on several machine learning tasks, including collaborative filtering, image inpainting, and community detection, show that the proposed alternating deep factorisation algorithms perform significantly better than existing state-of-the-art algorithms in most instances of these tasks.},
+  keywords = {Collaborative filtering,Community detection,Deep factorisation,Image inpainting,Non-negative matrix factorisation},
+  annotation = {7 citations (Crossref/DOI) [2024-11-27]\\
+2 citations (Crossref) [2023-10-23]},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/E3Y3DFQY/Sun et al - 2022 - Deep alternating non-negative matrix factorisation.pdf;/Users/bjonnalagadda/Documents/Zotero Library/storage/FVVPTD6N/S0950705122006025.html}
+}
+
+@article{dehandschutterSurveyDeepMatrix2021,
+  title = {A Survey on Deep Matrix Factorizations},
+  author = {De Handschutter, Pierre and Gillis, Nicolas and Siebert, Xavier},
+  year = {2021},
+  month = nov,
+  journal = {Computer Science Review},
+  volume = {42},
+  pages = {100423},
+  issn = {1574-0137},
+  doi = {10.1016/j.cosrev.2021.100423},
+  urldate = {2023-10-02},
+  abstract = {Constrained low-rank matrix approximations have been known for decades as powerful linear dimensionality reduction techniques able to extract the information contained in large data sets in a relevant way. However, such low-rank approaches are unable to mine complex, interleaved features that underlie hierarchical semantics. Recently, deep matrix factorization (deep MF) was introduced to deal with the extraction of several layers of features and has been shown to reach outstanding performances on unsupervised tasks. Deep MF was motivated by the success of deep learning, as it is conceptually close to some neural networks paradigms. In this survey paper, we present the main models, algorithms, and applications of deep MF through a comprehensive literature review. We also discuss theoretical questions and perspectives of research as deep MF is likely to become an important paradigm in unsupervised learning in the next few years.},
+  keywords = {Data mining,Deep learning,Machine learning,Matrix factorizations,Unsupervised learning},
+  annotation = {32 citations (Semantic Scholar/DOI) [2024-11-27]\\
+37 citations (Crossref/DOI) [2024-11-27]\\
+20 citations (Crossref) [2023-10-02]},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/4LQBH8PE/De Handschutter et al - 2021 - A survey on deep matrix factorizations.pdf;/Users/bjonnalagadda/Documents/Zotero Library/storage/68VR822Z/S1574013721000630.html}
+}
+
+@misc{dumoulinGuideConvolutionArithmetic2018,
+  title = {A Guide to Convolution Arithmetic for Deep Learning},
+  author = {Dumoulin, Vincent and Visin, Francesco},
+  year = {2018},
+  month = jan,
+  number = {arXiv:1603.07285},
+  eprint = {1603.07285},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.1603.07285},
+  urldate = {2024-11-27},
+  abstract = {We introduce a guide to help deep learning practitioners understand and manipulate convolutional neural network architectures. The guide clarifies the relationship between various properties (input shape, kernel shape, zero padding, strides and output shape) of convolutional, pooling and transposed convolutional layers, as well as the relationship between convolutional and transposed convolutional layers. Relationships are derived for various cases, and are illustrated in order to make them intuitive.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,Statistics - Machine Learning},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/VYUIKRQ9/Dumoulin and Visin - 2018 - A guide to convolution arithmetic for deep learning.pdf;/Users/bjonnalagadda/Documents/Zotero Library/storage/DXKPLPQY/1603.html}
+}
+
+@misc{dziugaiteNeuralNetworkMatrix2015,
+  title = {Neural {{Network Matrix Factorization}}},
+  author = {Dziugaite, Gintare Karolina and Roy, Daniel M.},
+  year = {2015},
+  month = dec,
+  number = {arXiv:1511.06443},
+  eprint = {1511.06443},
+  primaryclass = {cs, stat},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.1511.06443},
+  urldate = {2023-10-02},
+  abstract = {Data often comes in the form of an array or matrix. Matrix factorization techniques attempt to recover missing or corrupted entries by assuming that the matrix can be written as the product of two low-rank matrices. In other words, matrix factorization approximates the entries of the matrix by a simple, fixed function---namely, the inner product---acting on the latent feature vectors for the corresponding row and column. Here we consider replacing the inner product by an arbitrary function that we learn from the data at the same time as we learn the latent feature vectors. In particular, we replace the inner product by a multi-layer feed-forward neural network, and learn by alternating between optimizing the network for fixed latent features, and optimizing the latent features for a fixed network. The resulting approach---which we call neural network matrix factorization or NNMF, for short---dominates standard low-rank techniques on a suite of benchmark but is dominated by some recent proposals that take advantage of the graph features. Given the vast range of architectures, activation functions, regularizers, and optimization techniques that could be used within the NNMF framework, it seems likely the true potential of the approach has yet to be reached.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Machine Learning,Statistics - Machine Learning},
+  annotation = {169 citations (Semantic Scholar/arXiv) [2024-11-27]},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/MGJGG9ZA/Dziugaite_Roy - 2015 - Neural Network Matrix Factorization.pdf;/Users/bjonnalagadda/Documents/Zotero Library/storage/YDPCL2T6/1511.html}
+}
+
+@inproceedings{flennerDeepNonNegativeMatrix2017,
+  title = {A {{Deep Non-Negative Matrix Factorization Neural Network}}},
+  author = {Flenner, Jennifer and Hunter, Blake},
+  year = {2017},
+  langid = {english},
+  keywords = {⛔ No DOI found},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/6MGBHHTT/Flenner and Hunter - A Deep Non-Negative Matrix Factorization Neural Ne.pdf}
+}
+
+@article{guoConservativeLowRank2024,
+  title = {A Conservative Low Rank Tensor Method for the Vlasov Dynamics},
+  author = {Guo, Wei and Qiu, Jing-Mei},
+  year = {2024},
+  journal = {SIAM Journal on Scientific Computing},
+  volume = {46},
+  number = {1},
+  eprint = {https://doi.org/10.1137/22M1473960},
+  pages = {A232-A263},
+  doi = {10.1137/22M1473960},
+  abstract = {Abstract. In this paper, we propose a conservative low rank tensor method to approximate nonlinear Vlasov solutions. The low rank approach is based on our earlier work [W. Guo and J.-M. Qiu, A Low Rank Tensor Representation of Linear Transport and Nonlinear Vlasov Solutions and Their Associated Flow Maps, preprint, https://arxiv.org/abs/2106.08834, 2021]. It takes advantage of the fact that the differential operators in the Vlasov equation are tensor friendly, based on which we propose to dynamically and adaptively build up low rank solution basis by adding new basis functions from discretization of the differential equation, and removing basis from a singular value decomposition (SVD)-type truncation procedure. For the discretization, we adopt a high order finite difference spatial discretization together with a second order strong stability preserving multistep time discretization. While the SVD truncation will remove the redundancy in representing the high dimensional Vlasov solution, it will destroy the conservation properties of the associated full conservative scheme. In this paper, we develop a conservative truncation procedure with conservation of mass, momentum, and kinetic energy densities. The conservative truncation is achieved by an orthogonal projection onto a subspace spanned by 1, v, and v{$^2$} in the velocity space associated with a weighted inner product. Then the algorithm performs a weighted SVD truncation of the remainder, which involves a scaling, followed by the standard SVD truncation and rescaling back. The algorithm is further developed in high dimensions with hierarchical Tucker tensor decomposition of high dimensional Vlasov solutions, overcoming the curse of dimensionality. An extensive set of nonlinear Vlasov examples are performed to show the effectiveness and conservation property of proposed conservative low rank approach. Comparison is performed against the nonconservative low rank tensor approach on conservation history of mass, momentum, and energy.},
+  keywords = {Computer Science - Numerical Analysis,Mathematics - Numerical Analysis},
+  annotation = {2 citations (Crossref/DOI) [2024-11-27]},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/ADK3DFHA/Guo and Qiu - 2022 - A conservative low rank tensor method for the Vlasov dynamics.pdf;/Users/bjonnalagadda/Documents/Zotero Library/storage/2VFG8UMA/2201.html}
+}
+
+@article{guoLocalMacroscopicConservative2024,
+  title = {A {{Local Macroscopic Conservative}} ({{LoMaC}}) {{Low Rank Tensor Method}} with the {{Discontinuous Galerkin Method}} for the {{Vlasov Dynamics}}},
+  author = {Guo, Wei and Ema, Jannatul Ferdous and Qiu, Jing-Mei},
+  year = {2024},
+  month = mar,
+  journal = {Communications on Applied Mathematics and Computation},
+  volume = {6},
+  number = {1},
+  pages = {550--575},
+  issn = {2661-8893},
+  doi = {10.1007/s42967-023-00277-7},
+  abstract = {In this paper, we propose a novel Local Macroscopic Conservative (LoMaC) low rank tensor method with discontinuous Galerkin (DG) discretization for the physical and phase spaces for simulating the Vlasov-Poisson (VP) system. The LoMaC property refers to the exact local conservation of macroscopic mass, momentum, and energy at the discrete level. The recently developed LoMaC low rank tensor algorithm (arXiv: 2207.00518) simultaneously evolves the macroscopic conservation laws of mass, momentum, and energy using the kinetic flux vector splitting; then the LoMaC property is realized by projecting the low rank kinetic solution onto a subspace that shares the same macroscopic observables. This paper is a generalization of our previous work, but with DG discretization to take advantage of its compactness and flexibility in handling boundary conditions and its superior accuracy in the long term. The algorithm is developed in a similar fashion as that for a finite difference scheme, by observing that the DG method can be viewed equivalently in a nodal fashion. With the nodal DG method, assuming a tensorized computational grid, one will be able to (i) derive differentiation matrices for different nodal points based on a DG upwind discretization of transport terms, and (ii) define a weighted inner product space based on the nodal DG grid points. The algorithm can be extended to the high dimensional problems by hierarchical Tucker (HT) decomposition of solution tensors and a corresponding conservative projection algorithm. In a similar spirit, the algorithm can be extended to DG methods on nodal points of an unstructured mesh, or to other types of discretization, e.g., the spectral method in velocity direction. Extensive numerical results are performed to showcase the efficacy of the method.},
+  keywords = {Computer Science - Numerical Analysis,Mathematics - Numerical Analysis},
+  annotation = {0 citations (Crossref/DOI) [2024-11-27]\\
+0 citations (Crossref/DOI) [2024-11-27]},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/YTC345MC/Guo and Qiu - 2022 - A Local Macroscopic Conservative (LoMaC) low rank tensor method for the Vlasov dynamics.pdf;/Users/bjonnalagadda/Documents/Zotero Library/storage/GPL6EKQJ/2207.html}
+}
+
+@article{guoLowRankTensor2022,
+  title = {A Low Rank Tensor Representation of Linear Transport and Nonlinear {{Vlasov}} Solutions and Their Associated Flow Maps},
+  author = {Guo, Wei and Qiu, Jing-Mei},
+  year = {2022},
+  month = jun,
+  journal = {Journal of Computational Physics},
+  volume = {458},
+  pages = {111089},
+  issn = {0021-9991},
+  doi = {10.1016/j.jcp.2022.111089},
+  urldate = {2024-10-09},
+  abstract = {We propose a low-rank tensor approach to approximate linear transport and nonlinear Vlasov solutions and their associated flow maps. The approach takes advantage of the fact that the differential operators in the Vlasov equation are tensor friendly, based on which we propose a novel way to dynamically and adaptively build up low-rank solution basis by adding new basis functions from discretization of the PDE, and removing basis from an SVD-type truncation procedure. For the discretization, we adopt a high order finite difference spatial discretization and a second order strong stability preserving multi-step time discretization. We apply the same procedure to evolve the dynamics of the flow map in a low-rank fashion, which proves to be advantageous when the flow map enjoys the low rank structure, while the solution suffers from high rank or displays filamentation structures. Hierarchical Tucker decomposition is adopted for high dimensional problems. An extensive set of linear and nonlinear Vlasov test examples are performed to show the high order spatial and temporal convergence of the algorithm with mesh refinement up to SVD-type truncation, the significant computational savings of the proposed low-rank approach especially for high dimensional problems, the improved performance of the flow map approach for solutions with filamentations.},
+  keywords = {Flow map,Hierarchical Tuck decomposition of tensors,Low rank,Vlasov dynamics},
+  annotation = {21 citations (Semantic Scholar/DOI) [2024-11-27]\\
+11 citations (Crossref/DOI) [2024-11-27]\\
+11 citations (Crossref/DOI) [2024-10-09]},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/S9XRPR6Z/Guo and Qiu - 2022 - A low rank tensor representation of linear transport and nonlinear Vlasov solutions and their associ.pdf;/Users/bjonnalagadda/Documents/Zotero Library/storage/JQX9QG5J/S0021999122001516.html}
+}
+
+@misc{herreraDeniseDeepRobust2023,
+  title = {Denise: {{Deep Robust Principal Component Analysis}} for {{Positive Semidefinite Matrices}}},
+  shorttitle = {Denise},
+  author = {Herrera, Calypso and Krach, Florian and Kratsios, Anastasis and Ruyssen, Pierre and Teichmann, Josef},
+  year = {2023},
+  month = jun,
+  number = {arXiv:2004.13612},
+  eprint = {2004.13612},
+  primaryclass = {cs, math, q-fin, stat},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2004.13612},
+  urldate = {2023-09-22},
+  abstract = {The robust PCA of covariance matrices plays an essential role when isolating key explanatory features. The currently available methods for performing such a low-rank plus sparse decomposition are matrix specific, meaning, those algorithms must re-run for every new matrix. Since these algorithms are computationally expensive, it is preferable to learn and store a function that nearly instantaneously performs this decomposition when evaluated. Therefore, we introduce Denise, a deep learning-based algorithm for robust PCA of covariance matrices, or more generally, of symmetric positive semidefinite matrices, which learns precisely such a function. Theoretical guarantees for Denise are provided. These include a novel universal approximation theorem adapted to our geometric deep learning problem and convergence to an optimal solution to the learning problem. Our experiments show that Denise matches state-of-the-art performance in terms of decomposition quality, while being approximately \$2000{\textbackslash}times\$ faster than the state-of-the-art, principal component pursuit (PCP), and \$200 {\textbackslash}times\$ faster than the current speed-optimized method, fast PCP.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Machine Learning,Mathematics - Optimization and Control,Quantitative Finance - Computational Finance,Statistics - Machine Learning},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/EKHADTZM/Herrera et al - 2023 - Denise.pdf;/Users/bjonnalagadda/Documents/Zotero Library/storage/HNMFCB3D/2004.html}
+}
+
+@article{janzaminSpectralLearningMatrices2019,
+  title = {Spectral {{Learning}} on {{Matrices}} and {{Tensors}}},
+  author = {Janzamin, Majid and Ge, Rong and Kossaifi, Jean and Anandkumar, Anima},
+  year = {2019},
+  journal = {Foundations and Trends in Machine Learning},
+  volume = {12},
+  number = {5-6},
+  pages = {393--536},
+  issn = {1935-8237, 1935-8245},
+  doi = {10.1561/2200000057},
+  urldate = {2023-10-11},
+  langid = {english},
+  annotation = {38 citations (Semantic Scholar/DOI) [2024-11-27]\\
+12 citations (Crossref/DOI) [2024-11-27]\\
+9 citations (Crossref) [2023-10-11]},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/U8QUBPLM/Janzamin et al. - 2019 - Spectral Learning on Matrices and Tensors.pdf}
+}
+
+@misc{liuTimeSeriesAnalysisLowRank2019,
+  title = {Time-{{Series Analysis}} via {{Low-Rank Matrix Factorization Applied}} to {{Infant-Sleep Data}}},
+  author = {Liu, Sheng and Cheng, Mark and Brooks, Hayley and Mackey, Wayne and Heeger, David J. and Tabak, Esteban G. and {Fernandez-Granda}, Carlos},
+  year = {2019},
+  month = nov,
+  number = {arXiv:1904.04780},
+  eprint = {1904.04780},
+  primaryclass = {cs, stat},
+  publisher = {arXiv},
+  urldate = {2023-10-11},
+  abstract = {We propose a nonparametric model for time series with missing data based on low-rank matrix factorization. The model expresses each instance in a set of time series as a linear combination of a small number of shared basis functions. Constraining the functions and the corresponding coefficients to be nonnegative yields an interpretable low-dimensional representation of the data. A time-smoothing regularization term ensures that the model captures meaningful trends in the data, instead of overfitting short-term fluctuations. The low-dimensional representation makes it possible to detect outliers and cluster the time series according to the interpretable features extracted by the model, and also to perform forecasting via kernel regression. We apply our methodology to a large real-world dataset of infant-sleep data gathered by caregivers with a mobile-phone app. Our analysis automatically extracts daily-sleep patterns consistent with the existing literature. This allows us to compute sleep-development trends for the cohort, which characterize the emergence of circadian sleep and different napping habits. We apply our methodology to detect anomalous individuals, to cluster the cohort into groups with different sleeping tendencies, and to obtain improved predictions of future sleep behavior.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Statistics - Machine Learning},
+  annotation = {1 citations (Semantic Scholar/arXiv) [2024-11-27]},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/8AQFQJZD/Liu et al. - 2019 - Time-Series Analysis via Low-Rank Matrix Factoriza.pdf}
+}
+
+@misc{martinssonRandomizedNumericalLinear2021,
+  title = {Randomized {{Numerical Linear Algebra}}: {{Foundations}} \& {{Algorithms}}},
+  shorttitle = {Randomized {{Numerical Linear Algebra}}},
+  author = {Martinsson, Per-Gunnar and Tropp, Joel},
+  year = {2021},
+  month = mar,
+  number = {arXiv:2002.01387},
+  eprint = {2002.01387},
+  primaryclass = {cs, math},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2002.01387},
+  urldate = {2023-11-13},
+  abstract = {This survey describes probabilistic algorithms for linear algebra computations, such as factorizing matrices and solving linear systems. It focuses on techniques that have a proven track record for real-world problem instances. The paper treats both the theoretical foundations of the subject and the practical computational issues. Topics covered include norm estimation; matrix approximation by sampling; structured and unstructured random embeddings; linear regression problems; low-rank approximation; subspace iteration and Krylov methods; error estimation and adaptivity; interpolatory and CUR factorizations; Nystr{\textbackslash}"om approximation of positive-semidefinite matrices; single view ("streaming") algorithms; full rank-revealing factorizations; solvers for linear systems; and approximation of kernel matrices that arise in machine learning and in scientific computing.},
+  archiveprefix = {arXiv},
+  keywords = {Mathematics - Numerical Analysis},
+  annotation = {291 citations (Semantic Scholar/arXiv) [2024-11-27]},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/37URDUAU/Martinsson and Tropp - 2021 - Randomized Numerical Linear Algebra Foundations & Algorithms.pdf;/Users/bjonnalagadda/Documents/Zotero Library/storage/DWS5N3FT/2002.html}
+}
+
+@misc{ryanFastKernelTransform2021,
+  title = {The {{Fast Kernel Transform}}},
+  author = {Ryan, John Paul and Ament, Sebastian and Gomes, Carla P. and Damle, Anil},
+  year = {2021},
+  month = jun,
+  number = {arXiv:2106.04487},
+  eprint = {2106.04487},
+  primaryclass = {cs, math},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2106.04487},
+  urldate = {2023-12-22},
+  abstract = {Kernel methods are a highly effective and widely used collection of modern machine learning algorithms. A fundamental limitation of virtually all such methods are computations involving the kernel matrix that naively scale quadratically (e.g., constructing the kernel matrix and matrix-vector multiplication) or cubically (solving linear systems) with the size of the data set \$N.\$ We propose the Fast Kernel Transform (FKT), a general algorithm to compute matrix-vector multiplications (MVMs) for datasets in moderate dimensions with quasilinear complexity. Typically, analytically grounded fast multiplication methods require specialized development for specific kernels. In contrast, our scheme is based on auto-differentiation and automated symbolic computations that leverage the analytical structure of the underlying kernel. This allows the FKT to be easily applied to a broad class of kernels, including Gaussian, Matern, and Rational Quadratic covariance functions and physically motivated Green's functions, including those of the Laplace and Helmholtz equations. Furthermore, the FKT maintains a high, quantifiable, and controllable level of accuracy -- properties that many acceleration methods lack. We illustrate the efficacy and versatility of the FKT by providing timing and accuracy benchmarks and by applying it to scale the stochastic neighborhood embedding (t-SNE) and Gaussian processes to large real-world data sets.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Machine Learning,Mathematics - Numerical Analysis},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/CUFZGF7I/Ryan et al. - 2021 - The Fast Kernel Transform.pdf;/Users/bjonnalagadda/Documents/Zotero Library/storage/7HAES6YA/2106.html}
+}
+
+@article{scipy,
+  title = {{{SciPy}} 1.0: Fundamental Algorithms for Scientific Computing in {{Python}}},
+  shorttitle = {{{SciPy}} 1.0},
+  author = {Virtanen, Pauli and Gommers, Ralf and Oliphant, Travis E. and Haberland, Matt and Reddy, Tyler and Cournapeau, David and Burovski, Evgeni and Peterson, Pearu and Weckesser, Warren and Bright, Jonathan and Van Der Walt, St{\'e}fan J. and Brett, Matthew and Wilson, Joshua and Millman, K. Jarrod and Mayorov, Nikolay and Nelson, Andrew R. J. and Jones, Eric and Kern, Robert and Larson, Eric and Carey, C J and Polat, {\.I}lhan and Feng, Yu and Moore, Eric W. and VanderPlas, Jake and Laxalde, Denis and Perktold, Josef and Cimrman, Robert and Henriksen, Ian and Quintero, E. A. and Harris, Charles R. and Archibald, Anne M. and Ribeiro, Ant{\^o}nio H. and Pedregosa, Fabian and Van Mulbregt, Paul and {SciPy 1.0 Contributors} and Vijaykumar, Aditya and Bardelli, Alessandro Pietro and Rothberg, Alex and Hilboll, Andreas and Kloeckner, Andreas and Scopatz, Anthony and Lee, Antony and Rokem, Ariel and Woods, C. Nathan and Fulton, Chad and Masson, Charles and H{\"a}ggstr{\"o}m, Christian and Fitzgerald, Clark and Nicholson, David A. and Hagen, David R. and Pasechnik, Dmitrii V. and Olivetti, Emanuele and Martin, Eric and Wieser, Eric and Silva, Fabrice and Lenders, Felix and Wilhelm, Florian and Young, G. and Price, Gavin A. and Ingold, Gert-Ludwig and Allen, Gregory E. and Lee, Gregory R. and Audren, Herv{\'e} and Probst, Irvin and Dietrich, J{\"o}rg P. and Silterra, Jacob and Webber, James T and Slavi{\v c}, Janko and Nothman, Joel and Buchner, Johannes and Kulick, Johannes and Sch{\"o}nberger, Johannes L. and De Miranda Cardoso, Jos{\'e} Vin{\'i}cius and Reimer, Joscha and Harrington, Joseph and Rodr{\'i}guez, Juan Luis Cano and {Nunez-Iglesias}, Juan and Kuczynski, Justin and Tritz, Kevin and Thoma, Martin and Newville, Matthew and K{\"u}mmerer, Matthias and Bolingbroke, Maximilian and Tartre, Michael and Pak, Mikhail and Smith, Nathaniel J. and Nowaczyk, Nikolai and Shebanov, Nikolay and Pavlyk, Oleksandr and Brodtkorb, Per A. and Lee, Perry and McGibbon, Robert T. and Feldbauer, Roman and Lewis, Sam and Tygier, Sam and Sievert, Scott and Vigna, Sebastiano and Peterson, Stefan and More, Surhud and Pudlik, Tadeusz and Oshima, Takuya and Pingel, Thomas J. and Robitaille, Thomas P. and Spura, Thomas and Jones, Thouis R. and Cera, Tim and Leslie, Tim and Zito, Tiziano and Krauss, Tom and Upadhyay, Utkarsh and Halchenko, Yaroslav O. and {V{\'a}zquez-Baeza}, Yoshiki},
+  year = {2020},
+  month = mar,
+  journal = {Nature Methods},
+  volume = {17},
+  number = {3},
+  pages = {261--272},
+  issn = {1548-7091, 1548-7105},
+  doi = {10.1038/s41592-019-0686-2},
+  urldate = {2024-11-27},
+  abstract = {Abstract             SciPy is an open-source scientific computing library for the Python programming language. Since its initial release in 2001, SciPy has become a de facto standard for leveraging scientific algorithms in Python, with over 600 unique code contributors, thousands of dependent packages, over 100,000 dependent repositories and millions of downloads per year. In this work, we provide an overview of the capabilities and development practices of SciPy 1.0 and highlight some recent technical developments.},
+  langid = {english},
+  annotation = {21356 citations (Crossref/DOI) [2024-11-27]},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/9U92XWDZ/Virtanen et al. - 2020 - SciPy 1.0 fundamental algorithms for scientific computing in Python.pdf}
+}
+
+@inproceedings{senThinkGloballyAct2019,
+  title = {Think Globally, Act Locally: A Deep Neural Network Approach to High-Dimensional Time Series Forecasting},
+  shorttitle = {Think Globally, Act Locally},
+  booktitle = {Proceedings of the 33rd {{International Conference}} on {{Neural Information Processing Systems}}},
+  author = {Sen, Rajat and Yu, Hsiang-Fu and Dhillon, Inderjit},
+  year = {2019},
+  month = dec,
+  pages = {4837--4846},
+  publisher = {Curran Associates Inc.},
+  address = {Red Hook, NY, USA},
+  urldate = {2024-10-09},
+  abstract = {Forecasting high-dimensional time series plays a crucial role in many applications such as demand forecasting and financial predictions. Modern datasets can have millions of correlated time-series that evolve together, i.e they are extremely high dimensional (one dimension for each individual time-series). There is a need for exploiting global patterns and coupling them with local calibration for better prediction. However, most recent deep learning approaches in the literature are one-dimensional, i.e, even though they are trained on the whole dataset, during prediction, the future forecast for a single dimension mainly depends on past values from the same dimension. In this paper, we seek to correct this deficiency and propose DeepGLO, a deep forecasting model which thinks globally and acts locally. In particular, DeepGLO is a hybrid model that combines a global matrix factorization model regularized by a temporal convolution network, along with another temporal network that can capture local properties of each time-series and associated covariates. Our model can be trained effectively on high-dimensional but diverse time series, where different time series can have vastly different scales, without a priori normalization or rescaling. Empirical results demonstrate that DeepGLO can outperform state-of-the-art approaches; for example, we see more than 25\% improvement in WAPE over other methods on a public dataset that contains more than 100K-dimensional time series.},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/7KEG8WVP/Sen et al. - Think Globally, Act Locally A Deep Neural Network.pdf;/Users/bjonnalagadda/Documents/Zotero Library/storage/T8XTQKFW/Sen et al. - 2019 - Think globally, act locally a deep neural network approach to high-dimensional time series forecast.pdf}
+}
+
+@article{yangOrthogonalNonnegativeMatrix2021,
+  title = {Orthogonal {{Nonnegative Matrix Factorization}} Using a Novel Deep {{Autoencoder Network}}},
+  author = {Yang, Mingming and Xu, Songhua},
+  year = {2021},
+  month = sep,
+  journal = {Knowledge-Based Systems},
+  volume = {227},
+  pages = {107236},
+  issn = {0950-7051},
+  doi = {10.1016/j.knosys.2021.107236},
+  urldate = {2023-10-02},
+  abstract = {Orthogonal Nonnegative Matrix Factorization (ONMF) offers an important analytical vehicle for addressing many problems. Encouraged by record-breaking successes attained by neural computing models in solving an assortment of data analytics tasks, a rich collection of neural computing models has been proposed to perform ONMF with compelling performance. Such existing models can be broadly classified into the shallow-layered structure (SLS) based and deep-layered structure (DLS) based models. However, SLS models cannot capture complex relationships and hierarchical information latent in a matrix due to their simple network structures and DLS models rely on an iterative procedure to derive weights, leading to a less efficient solution process and cannot be reused to factorize new matrices. To overcome these shortcomings, this paper proposes a novel deep autoencoder network for ONMF, which is abbreviated as DAutoED-ONMF. Compared with SLS models, the newly proposed model is capable of generating solutions with good interpretability and solution uniqueness like original SLS models, yet the new model attains a superior learning capability thanks to its deep structure employed. In comparison with DLS models, the new model trains a reusable encoder network to directly factorize any given matrix with no need to repeatedly retrain the model for factorizing multiple matrices using a tailor-designed network training procedure. Proof of the procedure's convergence is presented with an analysis of its computational complexity. The numerical experiments conducted on several publicly data sets convincingly demonstrate that the proposed DAutoED-ONMF model gains promising performance in terms of multiple metrics.},
+  keywords = {Auxiliary function,Deep autoencoder network,Multiplication update rule,Orthogonal Nonnegative Matrix Factorization},
+  annotation = {25 citations (Semantic Scholar/DOI) [2024-11-27]\\
+24 citations (Crossref/DOI) [2024-11-27]\\
+12 citations (Crossref) [2023-10-02]},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/DRHDGK5Q/Yang_Xu - 2021 - Orthogonal Nonnegative Matrix Factorization using a novel deep Autoencoder.pdf;/Users/bjonnalagadda/Documents/Zotero Library/storage/8WDFAER9/S0950705121004986.html}
+}
+
+@article{zhaoMultiViewClusteringDeep2017,
+  title = {Multi-{{View Clustering}} via {{Deep Matrix Factorization}}},
+  author = {Zhao, Handong and Ding, Zhengming and Fu, Yun},
+  year = {2017},
+  month = feb,
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume = {31},
+  number = {1},
+  issn = {2374-3468, 2159-5399},
+  doi = {10.1609/aaai.v31i1.10867},
+  urldate = {2023-10-24},
+  abstract = {Multi-View Clustering (MVC) has garnered more attention recently since many real-world data are comprised of different representations or views. The key is to explore complementary information to benefit the clustering problem. In this paper, we present a deep matrix factorization framework for MVC, where semi-nonnegative matrix factorization is adopted to learn the hierarchical semantics of multi-view data in a layerwise fashion. To maximize the mutual information from each view, we enforce the non-negative representation of each view in the final layer to be the same. Furthermore, to respect the intrinsic geometric structure in each view data, graph regularizers are introduced to couple the output representation of deep structures. As a non-trivial contribution, we provide the solution based on alternating minimization strategy, followed by a theoretical proof of convergence. The superior experimental results on three face benchmarks show the effectiveness of the proposed deep matrix factorization model.},
+  langid = {english},
+  annotation = {416 citations (Semantic Scholar/DOI) [2024-11-27]\\
+245 citations (Crossref/DOI) [2024-11-27]\\
+161 citations (Crossref) [2023-10-23]},
+  file = {/Users/bjonnalagadda/Documents/Zotero Library/storage/F79YTQ57/Zhao et al. - 2017 - Multi-View Clustering via Deep Matrix Factorizatio.pdf}
+}

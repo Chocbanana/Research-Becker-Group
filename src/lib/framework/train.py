@@ -11,6 +11,10 @@ import torch
 import onnx
 import numpy as np
 from torch import nn
+import tensorly as tl
+
+tl.set_backend('pytorch')
+tl.use_static_dispatch()
 
 # Types
 from collections.abc import Callable
@@ -20,13 +24,30 @@ from torch.utils.tensorboard import SummaryWriter
 from torch import profiler
 
 
-def loss_fcn(X, U, V):
+
+def loss_fcn_nonneg(X, U, V):
     return torch.mean(
             torch.square(
                 torch.linalg.matrix_norm(X - nn.functional.relu(torch.bmm(U, V)),
-                # Don't enforce non-negativity on UV?
-                # torch.linalg.matrix_norm(X - torch.bmm(U, V),
-                                         ord='fro')))
+                                        ord='fro')))
+
+# DO NOT ENFORCE NONNEG
+def loss_fcn_neg(X, U, V):
+    # Don't enforce non-negativity on UV
+    return torch.mean(
+        torch.square(
+            torch.linalg.matrix_norm(X - torch.bmm(U, V), ord='fro')))
+
+
+# Go from tucker decomp to approximated full
+# TODO: Enforce orthogonality on U_n through loss? sum(square(U_n*U_n^T - I))
+# Problem: not square matrices
+def loss_4d(X, S, U):
+    tucker_batched = torch.stack(tuple(tl.tucker_to_tensor(x) for x in zip(S, zip(*U))))
+    return torch.mean(
+        torch.square(
+            torch.linalg.matrix_norm(X - tucker_batched, ord='fro')))
+
 
 # loop over the dataset multiple times
 def train_model(model: BaseMF,
@@ -41,7 +62,8 @@ def train_model(model: BaseMF,
                 batch_pr = 200,
                 writer: SummaryWriter = None,
                 profiler: profiler.profile = None,
-                loss_fcn: Callable = loss_fcn,
+                loss_fcn: Callable = loss_fcn_neg,
+                output_onnx=True,
                 **kwargs):
     mname = model.get_name()
     start_epoch = -1
@@ -64,6 +86,9 @@ def train_model(model: BaseMF,
         writer.add_hparams(model.get_hyperparameters(True), {})
         writer.flush()
 
+    # Helps somehow? https://pytorch.org/tutorials/recipes/recipes/tuning_guide.html
+    torch.backends.cudnn.benchmark = True
+
     loss_arr = []
     validation_arr = []
     time_arr = []
@@ -73,17 +98,18 @@ def train_model(model: BaseMF,
         running_time = 0.0
 
         for i, data in enumerate(train_data, 0):
-            data = data.to(device)
+            data = data.to(device) # Should already be on the device?
 
             # Write out a view of the NN graph, just once
-            if writer and e == 0 and i == 0:
+            if writer and e == 0 and i == 0 and output_onnx:
                 writer.add_graph(model, data)
                 writer.flush()
                 torch.onnx.export(model, data, os.path.join(output_run_dir, f'{mname}_model.onnx'), input_names=["matrix"], output_names=["V", "U"])
 
             start_time = default_timer()
             # zero the parameter gradients
-            optimizer.zero_grad()
+            # Supposedly less memory operations with set_to_none=True?
+            optimizer.zero_grad(set_to_none=True)
             # forward + backward + optimize
             U, V = model(data)
             # Loss function
@@ -104,10 +130,11 @@ def train_model(model: BaseMF,
                 model.eval()
                 model.train(False)
                 v_arr = []
-                for v_data in validate_data:
-                    v_data = v_data.to(device)
-                    U_v, V_v = model(v_data)
-                    v_arr.append(loss_fcn(v_data, U_v, V_v).item())
+                with torch.no_grad():
+                    for v_data in validate_data:
+                        v_data = v_data.to(device)
+                        U_v, V_v = model(v_data)
+                        v_arr.append(loss_fcn(v_data, U_v, V_v).item())
                 validation_arr.append(np.mean(v_arr))
                 model.train(True)
 

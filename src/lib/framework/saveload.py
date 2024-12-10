@@ -34,14 +34,14 @@ def load_checkpoint(mname: str,
         # file_checkpoint = max(filter(lambda x: x.startswith(name_checkpoint)), os.listdir(output_run_dir), default=None)
         if file_checkpoint:
             print(f"Found checkpoint to load. Using: {file_checkpoint}")
-            checkpoint_dict = torch.load(os.path.join(output_run_dir, file_checkpoint))
+            checkpoint_dict = torch.load(os.path.join(output_run_dir, file_checkpoint), map_location=device)
 
     if statedict_str:
         name_statedict = state_dict_notime.format(machine, mname)
         file_statedict = next((x for x in sorted(os.listdir(output_run_dir), reverse=True) if x.startswith(name_statedict)), None)
         if file_statedict:
             print(f"Found model state dict to load. Using: {file_statedict}")
-            statedict = torch.load(os.path.join(output_run_dir, file_statedict))
+            statedict = torch.load(os.path.join(output_run_dir, file_statedict), map_location=device)
 
     return checkpoint_dict, statedict
 
@@ -71,6 +71,11 @@ def load_trained_model(ModelClass: BaseMF.__class__, machine, runname, model_str
     model = ModelClass(**deets[model_str_name]).to(device)
 
     _, statedict = load_checkpoint(model.get_name(), machine, output_run_dir=dir, checkpoint_str="")
+
+    if not statedict:
+        print(f"Could not find state dict for {model_str_name}")
+        return None
+
     model.load_state_dict(statedict)
 
     return model

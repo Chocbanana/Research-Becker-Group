@@ -7,6 +7,7 @@ import torch
 from torch.utils.data import Dataset
 from torch import nn
 
+
 class GenPlasma1DDataset(Dataset):
     def __init__(self,
                  mat_dirs: Sequence[str],
@@ -20,7 +21,7 @@ class GenPlasma1DDataset(Dataset):
 
         Args:
             mat_dirs (Sequence[str]): The dirs in which the hdf5 files are located. All are used across the dataset loading
-            mats (Sequence[str], optional): The dataset(s) to load. Defaults to ["f"].
+            mats (Sequence[str], optional): The dataset(s) to load. Defaults to ["f"]. Valid options are ['S', 'U', 'V', 'f']
             return_imname (bool, optional): Whether to also return the path+filename of the matrix
             transform (Callable, optional): A transform fcn to be applied to an matrix after loading. Defaults to None.
         """
@@ -50,6 +51,8 @@ class GenPlasma1DDataset(Dataset):
             mats = tuple(torch.Tensor(file[m][()]) for m in self.mat_names)
         if self.transform is not None:
             mats = tuple(self.transform(m) for m in mats)
+        if "rand" in self.mat_dirs[folder_num]:
+            mats = tuple(torch.transpose(m, 0, 1) for m in mats)
 
         if self.return_imname:
             mats = mats + (os.path.join(f"{self.mat_dirs[folder_num]}", f"{mat_num}.hdf5"), idx)

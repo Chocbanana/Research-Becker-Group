@@ -3,4 +3,5 @@ __all__ = [
         'simpleFork',
         "danmf",
         "convmf",
+        "conv4d"
         ]

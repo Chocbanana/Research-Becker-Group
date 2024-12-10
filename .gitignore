@@ -3,10 +3,22 @@
 *__pycache__
 *.jupyterlab-workspace
 
+data/output/*.tar
+data/output/*.pt
 data/output/*DANMF*.tar
 data/output/*DANMF*.pt
+data/output/run_*/*.tar
+data/output/run_*/*.pt
+data/output/run_*/*.weight
+
+
 data/gen_plasma_n128/mat_*/
 data/gen_plasma_n256/mat_*/
 data/gen_plasma_n64/mat_*/*.csv
 data/gen_plasma_n64/mat_1/*
 data/gen_plasma_n64/mat_2/*
+data/gen_plasma_n64/mat_0/*
+data/gen_plasma_n128/rand_*/
+
+*.npy
+data/gen_plasma_4d/n32
