@@ -1,0 +1,106 @@
+{
+  "run_params": {
+    "epochs": 120,
+    "checkpoint_at": 60,
+    "batch_pr": 30,
+    "batch_size": 2,
+    "runname": "tst_4d",
+    "machine": "PC"
+  },
+  "Conv4D_r3": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 3,
+    "img_size": [
+      32,
+      32,
+      64,
+      64
+    ],
+    "desc": "Conv layer(s) into Fork for 4D model"
+  },
+  "Conv4D": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 6,
+    "img_size": [
+      32,
+      32,
+      64,
+      64
+    ],
+    "desc": "Conv layer(s) into Fork for 4D model"
+  },
+  "Conv4D_r12": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 12,
+    "img_size": [
+      32,
+      32,
+      64,
+      64
+    ],
+    "desc": "Conv layer(s) into Fork for 4D model"
+  }
+}

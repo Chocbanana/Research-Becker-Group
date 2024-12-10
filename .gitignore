@@ -22,3 +22,4 @@ data/gen_plasma_n128/rand_*/
 
 *.npy
 data/gen_plasma_4d/n32
+*.onnx

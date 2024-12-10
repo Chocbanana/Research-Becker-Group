@@ -1,0 +1,88 @@
+{
+  "run_params": {
+    "epochs": 120,
+    "checkpoint_at": 60,
+    "batch_pr": 50,
+    "batch_size": 2,
+    "runname": "4d_n32",
+    "machine": "PC"
+  },
+  "Conv4D_r3_cdim1-ff96": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 3,
+    "img_size": [
+      32,
+      32,
+      64,
+      64
+    ],
+    "desc": "Conv layer(s) into Fork for 4D model"
+  },
+  "Conv4D_cdim1-ff96": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 6,
+    "img_size": [
+      32,
+      32,
+      64,
+      64
+    ],
+    "desc": "Conv layer(s) into Fork for 4D model"
+  },
+  "Conv4D_r12_cdim1-ff96": {
+    "conv_dims": [
+      [
+        5,
+        1,
+        3,
+        1
+      ]
+    ],
+    "stem_layer_dims": [
+      500,
+      200
+    ],
+    "fork_layer_dims": [
+      200,
+      300
+    ],
+    "rank": 12,
+    "img_size": [
+      32,
+      32,
+      64,
+      64
+    ],
+    "desc": "Conv layer(s) into Fork for 4D model"
+  }
+}

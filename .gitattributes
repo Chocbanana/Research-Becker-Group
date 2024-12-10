@@ -1,0 +1,9 @@
+data/output/run_newloss_n128_more_r/df_losses.csv filter=lfs diff=lfs merge=lfs -text
+data/output/run_plasma_data_gen_seq/df_losses.csv filter=lfs diff=lfs merge=lfs -text
+data/output/run_plasma_data_seq/df_losses.csv filter=lfs diff=lfs merge=lfs -text
+data/output/run_plasma_mf_2/df_losses.csv filter=lfs diff=lfs merge=lfs -text
+data/output/run_plasma_mf_test_1/df_losses.csv filter=lfs diff=lfs merge=lfs -text
+data/output/run_plasma_newloss_n128/df_losses.csv filter=lfs diff=lfs merge=lfs -text
+data/output/run_Winner1_ranks/df_losses.csv filter=lfs diff=lfs merge=lfs -text
+data/output/run_plasma_mf_dims/df_losses.csv filter=lfs diff=lfs merge=lfs -text
+*df_losses.csv filter=lfs diff=lfs merge=lfs -text
